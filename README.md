@@ -97,7 +97,4 @@ Add or change brick definitions in `sample_bricks()` inside `presentation.py`. E
 
 ## Notes and limitations
 - The placement/rotation search is exhaustive but fast for 6x6x6 and 4-cube bricks. For larger grids or more complex pieces, consider more efficient pruning.
-- The loader assumes saved files are consistent; loading an invalid file (overlaps or out-of-bounds) may raise an error. I can add validation and previews if you'd like.
- - The loader assumes saved files are consistent; loading an invalid file (overlaps or out-of-bounds) may raise an error. I can add validation and previews if you'd like.
-
-If you want, I can update the README with screenshots or add a preview/highlight feature for candidate placements.
+- The loader assumes saved files are consistent; loading an invalid file (overlaps or out-of-bounds) may raise an error. 

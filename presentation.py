@@ -106,7 +106,7 @@ class CubeGrid:
             'O': set(),
             'S3D': set()
         }
-        self.valid_rotations = {
+        self.valid_brick_rotations = {
             'T': set(),
             'I': set(),
             'L': set(),
@@ -121,7 +121,7 @@ class CubeGrid:
                     for rz in range(4):
                         b = brick.rotated(rx, ry, rz).normalized()
                         all_rotations.add(b)
-            self.valid_rotations[brick.name] = all_rotations
+            self.valid_brick_rotations[brick.name] = all_rotations
 
             for x in range(self.size):
                 for y in range(self.size):
@@ -275,7 +275,7 @@ class CubeGrid:
         if not empties:
             return placements
 
-        rotations = self.valid_rotations.get(brick.name, set())
+        rotations = self.valid_brick_rotations.get(brick.name, set())
         for e in empties:
             for b in rotations:
                 if self.can_place(b, e):
@@ -297,7 +297,7 @@ class CubeGrid:
         if not empties:
             return False
 
-        rotations = self.valid_rotations.get(brick.name, set())
+        rotations = self.valid_brick_rotations.get(brick.name, set())
         for e in empties:
             is_ok=False
             for b in rotations:
