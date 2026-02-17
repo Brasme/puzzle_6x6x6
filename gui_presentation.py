@@ -393,13 +393,10 @@ class App(tk.Tk):
                         if pid != 0:
                             facearr[x, y, z] = colors.get(pid, (0.5, 0.5, 0.5, 1.0))
             self.ax.voxels(filled, facecolors=facearr, edgecolor='k')
-        else:
-            # empty axes to show a box
-            # draw empty cube frame
-            r = range(0, self.grid.size + 1)
-            self.ax.set_xlim(0, self.grid.size)
-            self.ax.set_ylim(0, self.grid.size)
-            self.ax.set_zlim(0, self.grid.size)
+        # Always set the axes limits to show the full 6x6x6 grid
+        self.ax.set_xlim(0, self.grid.size)
+        self.ax.set_ylim(0, self.grid.size)
+        self.ax.set_zlim(0, self.grid.size)
         self.ax.set_xlabel('X')
         self.ax.set_ylabel('Y')
         self.ax.set_zlabel('Z')
